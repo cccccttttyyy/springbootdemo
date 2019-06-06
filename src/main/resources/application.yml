@@ -1,0 +1,53 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+#  undertow:
+#    io-threads: 4
+#    worker-threads: 64
+#    buffer-size: 1024
+#    direct-buffers: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    one:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: 123456
+    two:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test
+        username: root
+        password: 123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: 1000
+      max-idle: 500
+      min-idle: 0
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+
+mybatis:
+  mapper-locations: classpath*:mapper/*/*.xml
+  type-aliases-package:  com.tsrain.learning.job.domain;
+
+info.author:
+ realname: cty
+ email: cty@163.com
+
+management:
+  security:
+    enabled: false
+  context-path: /manage
+  port: 9090
